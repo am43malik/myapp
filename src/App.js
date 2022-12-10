@@ -1,12 +1,27 @@
-
-import './App.css';
+import React from 'react'
+import { BrowserRouter,Route, Routes } from "react-router-dom";
+import Edit from './components/pages/Edit';
+import Home from "./components/pages/Home";
+import View from './components/pages/View';
 
 function App() {
   return (
-    <div className="App">
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div >
+    
+
+    <BrowserRouter>
+    <Routes>
+
+      <Route path='/' element={<Home/>}/>
+      <Route path='/view/:id' element={<View/>}/>
+      <Route path='/edit/:id' element={<Edit/>}/>
+
+    </Routes>
+    
+   
+    
+    </BrowserRouter>
+
     </div>
   );
 }
